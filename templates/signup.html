@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>회원가입 페이지</title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+
+</head>
+<body>
+    <header>
+        <<h1></h1>
+        <p></p>
+        <div class="line"></div>
+    </header>
+    <section id="list">
+        <artticle>
+            <form method="POST" action="/signup_ok">
+	           <table><br>
+                    <tr><br>
+                        <td>이름</td><br>
+                        <td><input type="text" name="user_name" placeholder="이름을 입력해주세요" required  /></td><br>
+                        </tr><br>
+                        <tr><br>
+                            <td>아이디</td>
+                            <td><input type="text" name="user_id" placeholder="아이디를 입력해주세요" required  />
+                            <input type="submit" value="아이디 중복검사" />
+                            </td>                                
+                        </tr><br>
+                        <tr><br>
+                            <td>비밀번호</td><br>
+                            <td><input type="password" name="user_pw" placeholder="비밀번호를 입력해주세요" required  /></td><br>
+                        </tr><br>
+                        <tr><br>
+                            <td>비밀번호 확인</td><br>
+                            <td><input type="password" name="user_pw2" required/></td><br>
+                        </tr><br>
+                        <tr><br>
+                        </tr><br>
+                        <tr><br>
+                            <td></td><br>
+                            <td><a href="/signup_ok"><input type="submit" name="submit" value="회원 가입" /></a><br>
+
+                            <input type="reset" name="reset" value="다시하기" /></td><br>
+                        </tr><br>
+                    </table><br><br>
+            </form>
+        </article>
+    </section>
+    <aside>
+        <h3>NAVIGATION</h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>About</li>
+            <li><a href="/write">Write</a></li>
+        </ul>
+        <h3>RECENT POSTS</h3>
+        <ul>
+            {%for i in list%}
+            <li>{{i[0]}}</li>
+            {%endfor%}
+        </ul>
+        <div class="action">
+        </div>
+    </aside>
+</body>
+</html>

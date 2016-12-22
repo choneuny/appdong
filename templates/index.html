@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced Programing Project</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+<body>
+	<header>
+		<h1>APP 홈페이지</h1>
+		<div class="line"></div>
+	</header>
+	<section id="list">
+		{%for i in list%}
+		<article>
+			<a href="/view/{{i[4]}}"><h2>{{i[0]}}</h2></a>
+			<p>{{i[1]}}</p></a>
+			<p>{{i[2]}}</p></a>
+			<a href="/edit/{{i[4]}}"><button>EDIT</button></a>
+			<a href="/delete/{{i[4]}}"><button>DELETE</button></a>
+		</article>
+		{%endfor%}
+	</section>
+	<aside>
+		<table id="member"><br>
+			<tr align="center"><br>
+				<td>Login</td><br>
+			</tr><br>
+			<tr><br>
+				<td>아이디</td><br>
+				<td><input type="text" name="user_id" /></td><br>
+				<td><a href="/login_ok"><button>로그인</button></a></td><br>
+			</tr><br>
+			<tr><br>
+                <td>비밀번호</td><br>
+                <td><input type="password" name="user_pw" /></td><br>
+                <td><a href="/signup"><button>회원가입</button></a></td>
+            </tr><br>
+		</table>
+		<h3>NAVIGATION</h3>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li>About</li>
+			<li><a href="/write">Write</a></li>
+			
+		</ul>
+		
+		<h3>RECENT POSTS</h3>
+		<ul>
+			{%for i in list%}
+			<a href="/view/{{i[4]}}"><li>{{i[0]}}</li></a>
+			{%endfor%}
+		</ul>
+		<div class="action">
+		</div>
+	</aside>
+</body>
+</html>
